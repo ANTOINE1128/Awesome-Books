@@ -49,8 +49,11 @@ const addBook = (book) => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const book = {
+    index: books.length + 1,
     title: title.value,
     author: author.value,
   };
   addBook(book);
 });
+
+console.log(books);
