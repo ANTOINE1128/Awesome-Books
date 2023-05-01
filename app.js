@@ -1,62 +1,56 @@
 const body = document.querySelector('.body');
 const booksSection = document.querySelector('.books');
+const form = document.querySelector('#form');
+const title = document.querySelector('#book-title');
+const author = document.querySelector('#author');
 
-// create an object for books
-const bookObj = {
-  books: [
-    {
-      bookRank: 1,
-      title: 'firstbook',
-      author: 'antoine'
-    },
-    {
-      bookRank: 2,
-      title: 'secondbook',
-      author: 'victor'
-    }
-  ]
+// get books from local storage if any
+
+let books = [];
+
+const getBooks = () => {
+  let savedBooks = [];
+  if (localStorage.getItem('books')) {
+    savedBooks = JSON.parse(localStorage.getItem('books'));
+  }
+  return savedBooks;
 };
 
-// create the book section
-// let bookHtml = '';
+books = getBooks();
 
-// bookObj.books.forEach(book => {
-//   const html = `
-//     <div class="book">
-//       <h3>${book.title}</h3>
-//       <p>${book.author}</p>
-//       <button class="${book.bookRank}">remove</button>
-//     </div>
-//   `;
-//   bookHtml += html;
-// });
+// display books from local storage
 
-// booksSection.innerHTML = bookHtml;
-//adding a new book function
-
-function addBook(title,author){
-    const newBook = {
-        bookRank : bookObj.books.length +1,
-        title : title,
-        author: author,
-
-    };
-    bookObj.books.push(newBook);
-}
-  addBook("mkad", "tony");
-
-  // create the book section
-let bookHtml = '';
-
-bookObj.books.forEach(book => {
-  const html = `
-    <div class="book">
+const showBooks = () => {
+  getBooks();
+  booksSection.innerHTML = '';
+  books.forEach((book) => {
+    const bookDiv = document.createElement('div');
+    bookDiv.classList.add('book');
+    bookDiv.innerHTML = `
       <h3>${book.title}</h3>
       <p>${book.author}</p>
-      <button class="${book.bookRank}">remove</button>
-    </div>
-  `;
-  bookHtml += html;
-});
+      <button class="btn btn-danger delete">Delete</button>
+    `;
+    booksSection.appendChild(bookDiv);
+  });
+};
 
-booksSection.innerHTML = bookHtml;
+showBooks();
+
+// add book to local storage
+
+const addBook = (book) => {
+  getBooks();
+  books.push(book);
+  localStorage.setItem('books', JSON.stringify(books));
+  showBooks();
+};
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const book = {
+    title: title.value,
+    author: author.value,
+  };
+  addBook(book);
+});
