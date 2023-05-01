@@ -4,6 +4,7 @@ const form = document.querySelector('#form');
 const title = document.querySelector('#book-title');
 const author = document.querySelector('#author');
 
+
 // get books from local storage if any
 
 let books = [];
@@ -27,9 +28,10 @@ const showBooks = () => {
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
     bookDiv.innerHTML = `
+      
       <h3>${book.title}</h3>
       <p>${book.author}</p>
-      <button class="btn btn-danger delete">Delete</button>
+      <button id=${book.index} class="btn-btn-danger delete">Delete</button>
     `;
     booksSection.appendChild(bookDiv);
   });
@@ -56,4 +58,16 @@ form.addEventListener('submit', (e) => {
   addBook(book);
 });
 
-console.log(books);
+const Rbook = document.querySelectorAll('.delete')
+
+Rbook.forEach((remove)=>{
+    remove.addEventListener("click", removeBook)
+})
+
+function removeBook (event){
+  
+getBooks();
+books = books.filter(book => book.index !== event.target.id) 
+ localStorage.setItem('books',JSON.stringify(books));
+ showBooks();   
+}
