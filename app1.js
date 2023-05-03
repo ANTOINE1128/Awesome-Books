@@ -48,7 +48,7 @@ class Book {
     this.books = this.books.filter((book, i) => i !== Number(index));
     localStorage.setItem('books', JSON.stringify(this.books));
     this.showBooks();
-  }
+  };
 }
 
 const form = document.querySelector('#form');
@@ -79,3 +79,33 @@ btn2.addEventListener('click', (e) => {
   book.addBook(newBook);
   form.reset();
 });
+
+const listNav = document.querySelector('.list');
+const addNav = document.querySelector('.add');
+const contactNav = document.querySelector('.contact-nav');
+
+const contact = document.querySelector('.contact-div');
+const books = document.querySelector('.books');
+const addBook = document.querySelector('.add-book');
+
+const showContact = () => {
+  contact.style.display = 'block';
+  books.style.display = 'none';
+  addBook.style.display = 'none';
+};
+
+const showBooks = () => {
+  contact.style.display = 'none';
+  books.style.display = 'block';
+  addBook.style.display = 'none';
+};
+
+const showAddBook = () => {
+  contact.style.display = 'none';
+  books.style.display = 'none';
+  addBook.style.display = 'block';
+};
+
+listNav.addEventListener('click', showBooks);
+addNav.addEventListener('click', showAddBook);
+contactNav.addEventListener('click', showContact);

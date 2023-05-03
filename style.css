@@ -2,8 +2,8 @@
   margin: 0;
 }
 #form {
-  position: relative;
-  left: 30%;
+  padding: 3rem;
+  text-align: center;
 }
 
 .input {
@@ -11,7 +11,14 @@
   align-items: center;
   grid-template-columns: 0.5fr;
 }
-.show {
-display: flex;
+.list {
+  display: flex;
+}
 
+.add-book {
+  display: none;
+}
+
+.contact-div {
+  display: none;
 }
