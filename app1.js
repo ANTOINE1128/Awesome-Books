@@ -55,6 +55,7 @@ class Book {
 const form = document.querySelector('#form');
 const title = document.querySelector('#book-title');
 const author = document.querySelector('#author');
+const btn2 = document.querySelector('.btn-secondary');
 
 const book = new Book();
 
@@ -67,4 +68,15 @@ form.addEventListener('submit', (e) => {
     author: author.value,
   };
   book.addBook(newBook);
+  form.reset();
+});
+
+btn2.addEventListener('click', (e) => {
+  e.preventDefault();
+  const newBook = {
+    title: title.value,
+    author: author.value,
+  };
+  book.addBook(newBook);
+  form.reset();
 });

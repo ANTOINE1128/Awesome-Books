@@ -12,10 +12,24 @@
 
 </head>
 <body class="body">
-    <nav>
-        <h1>Awesome Books</h1>
-        <p id ="demo"></p>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary  px-5">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Awesome Books</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ">
+                    <a class="nav-item nav-link active text-white list-page" href="#">List <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link text-white add-page" href="#">Add New</a>
+                    <a class="nav-item nav-link text-white contact-page" href="#">Contact</a>
+                  </div>
+                </div>
+            </div>    
+        </nav>
+    </header>
+
  <section class="books">
     <div class="container">
         <table class="table table-striped mt-5">
@@ -30,13 +44,32 @@
         </table>
     </div>
 </section>
+
+
+
+<section id="contact">
+    <div class="container d-flex justify-content-center my-5">
+        <div class="contact-details mx-5">
+            <h1 class="display-4 text-center mt-5 text-secondary font-weight-900">Contact Information</h1>
+            <div class="container">
+                <p >Do you have any questions or you just want say hello?</p>
+            <p >You can reach out to us!</p>
+            <ul >
+               <li>Email: </li>
+                <li>Phone Number:</li>
+                <li>Address:</li>
+            </ul>
+            </div>
+        </div>
+</section>
+
     <form id="form">
         <p></p>
         <input id="book-title" type="text" placeholder="Title" required  class="input"/>
         <p></p>
         <input id="author" type="name" placeholder="Author" required class="input"/>
         <br>
-        <button type="submit" id="add">Add</button>
+        <button type="submit" id="add" class="btn btn-secondary">Add</button>
       </form>
 <!-- <script src="app.js"></script> -->
 <script src="app1.js"></script>

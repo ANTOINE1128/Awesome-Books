@@ -1,13 +1,6 @@
 * {
   margin: 0;
 }
-
-nav h1 {
-  text-align: center;
-  font-weight: 700;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 #form {
   position: relative;
   left: 30%;
@@ -17,4 +10,8 @@ nav h1 {
   display: grid;
   align-items: center;
   grid-template-columns: 0.5fr;
+}
+.show {
+display: flex;
+
 }
