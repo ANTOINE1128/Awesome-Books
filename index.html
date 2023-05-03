@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <title>Awesome Books</title>
+  </head>
+  <body class="body">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary px-5">
+        <div class="container">
+          <a class="navbar-brand text-white" href="#">Awesome Books</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse d-flex justify-content-end"
+            id="navbarNavAltMarkup"
+          >
+            <div class="navbar-nav">
+              <a
+                class="nav-item nav-link active text-white list-page list"
+                href="#"
+                >List <span class="sr-only">(current)</span></a
+              >
+              <a class="nav-item nav-link text-white add-page add" href="#"
+                >Add New</a
+              >
+              <a
+                class="nav-item nav-link text-white contact-page contact-nav"
+                href="#"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="books">
+      <div class="container">
+        <table class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-div">
+      <div class="container d-flex justify-content-center my-5">
+        <div class="contact-details mx-5">
+          <h1 class="display-4 text-center mt-5 text-secondary font-weight-900">
+            Contact Information
+          </h1>
+          <div class="container">
+            <p>Do you have any questions or you just want say hello?</p>
+            <p>You can reach out to us!</p>
+            <ul>
+              <li>Email: <strong>abc123@gmail.com</strong></li>
+              <li>Phone Number: <strong>+123456789</strong></li>
+              <li>Address: <strong>123 045</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form id="form" class="add-book">
+      <p></p>
+      <input
+        id="book-title"
+        type="text"
+        placeholder="Title"
+        required
+        class="input form-control"
+      />
+      <p></p>
+      <input
+        id="author"
+        type="name"
+        placeholder="Author"
+        required
+        class="input form-control"
+      />
+      <br />
+      <button type="submit" id="add" class="btn btn-secondary">Add</button>
+    </form>
+
+    <script src="app1.js"></script>
+  </body>
+</html>
