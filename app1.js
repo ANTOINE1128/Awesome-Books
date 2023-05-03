@@ -51,7 +51,6 @@ class Book {
   }
 }
 
-// const booksSection = document.querySelector('.books');
 const form = document.querySelector('#form');
 const title = document.querySelector('#book-title');
 const author = document.querySelector('#author');
